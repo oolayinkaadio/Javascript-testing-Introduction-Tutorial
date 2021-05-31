@@ -19,11 +19,11 @@ the test code to be tested/executed
 
 // End To End test [E2E]:
 // Note: The checkAndGenerate() depends on other functions [i.e dependencies] to run
-test('should click around', async () => {
+test('should create an element with text and correct class', async () => {
     const browser = await puppeteer.launch({
-        headless: false, //to run a browser with a UI
-        slowMo: 80, //slowing down the automated operation
-        args: ['--window-size=1920,1080']  //to show the window size:  of the launcher and to test if certain features are working as expected
+        headless: true, //Not to run a browser with a UI and performs the action behind the scenes
+        // slowMo: 80, //slowing down the automated operation
+        // args: ['--window-size=1920,1080']  //to show the window size:  of the launcher and to test if certain features are working as expected
     });
     const page = await browser.newPage();
     await page.goto(
